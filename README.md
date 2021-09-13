@@ -1,15 +1,17 @@
-# _Album Release Tracker_
+# _Activity Alternatives_
 
-#### _Genre-Based Album-Release Tracker_
+#### _Bored? Stupid? We can help._
 
 #### By _**Kevin Funez, Scott Hutley, Melissa Schatz-Miller**_
 
 ## Technologies Used
 
 * _JavaScript_
-* _the major technologies_
-* _you used in your project_
-* _here_
+* _Webpack_
+* _Node JS_
+* _Jest_
+* _HTML_
+* _CSS_
 
 ## Description
 
@@ -17,7 +19,7 @@ _{This is a detailed description of your application. Give as much detail as nee
 
 ## Setup/Installation Requirements
 
-* _Clone [this repository](https://github.com/tigertiger/REPONAME) to an empty folder or to your desktop.  
+* _Clone [this repository](https://github.com/tigertiger/activity-alternatives) to an empty folder or to your desktop.  
 Instructions for cloning can be found [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository)._
 * _This is a great place_
 * _to list setup instructions_

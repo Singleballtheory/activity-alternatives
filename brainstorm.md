@@ -1,5 +1,3 @@
-hello. Hi.
-
 #### MVP: Users can find an activity to do based on some criteria/s or other.
 
 #### Stretch Goals: 
@@ -10,8 +8,10 @@ hello. Hi.
 Person enters amount of time available & our app with give them suggestions of things to do that will fill that amount of time
 -- I like the idea of it also being able to factor in things like: energy level, weather, how stressed out you are, activity level, budget
 
+
+### Melissa suggests: Maybe one person spends some time figuring out how we can store user-inputted data into our fake database? One person finds the best api for random activity suggestions/waste of time activity suggestions? One person builds out a basic html and/or JS framework to start from?
+
 Imminent:
-- Change document/repo name
 - Basic HTML Framework
 - Database of activities [objects with properties??]/structure for user to input activities/tasks they've been wanting to do
 -  How do we save user data?
@@ -27,4 +27,9 @@ Eventual:
 - What is the name of our app?
 - CSS styling
 
+---
 
+##### Notes on Local Storage of User Objects
+_https://blog.logrocket.com/localstorage-javascript-complete-guide/#sessionstoragevslocalstorage_
+* 
+* User can reset their list of tasks/activities with a button that does this: window.localStorage.clear(); [Pop up warning that this cannot be undone]
