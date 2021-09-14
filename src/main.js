@@ -3,12 +3,14 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import {User, userActivity} from './js/activities.js';
+// import {hike} from './js/prebuilts.js';
 
 $(document).ready(function() {
+  let user;
   $('#submitUser').click(function(event) {
     event.preventDefault();
     const name = $('#nameInput').val();
-    const user = new User(name);
+    user = new User(name);
     console.log(user);
     $('#nameDisplay').html(`${user.name}`);
     $('#titleLine').hide();
@@ -27,8 +29,16 @@ $(document).ready(function() {
     $('#urgency').val("");
     $('#loc').val("");
     const newActivity = new userActivity(activity, time, energy, urgency, loc);
-    console.log(newActivity);
-    $('#activityDisplay').html(`${newActivity.activity + " " + newActivity.time + " " +  newActivity.energy + " " +  newActivity.urgency + " " + newActivity.loc}`);
+    const newActivity2 = new userActivity("prance", "60", "medium", "high", "outside");
+    user.addActivity(newActivity);
+    user.addActivity(newActivity2);
+    console.log(user, user.activities, newActivity.id, "this is the console log");
+    $('#activityDisplay').html(`${newActivity.activity + " " + newActivity.time + " " +  newActivity.energy + " " +  newActivity.urgency + " " + newActivity.loc + " " + newActivity.id}`);
     return newActivity;
+  });
+
+  $('#showActivities').click(function(event) {
+    event.preventDefault();
+    $('#activityDisplay').html();
   });
 });
