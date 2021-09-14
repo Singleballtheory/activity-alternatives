@@ -12,6 +12,12 @@ export class User {
     this.currentId += 1;
     return this.currentId;
   }
+  findActivity(id) {
+    if (this.activities[id] !== undefined) {
+      return this.activities[id];
+    }
+    return false;
+  }
 }
 
 export class userActivity {
@@ -25,6 +31,8 @@ export class userActivity {
   }
 }
 
+
+// with multiple users, we would need to avoid already-added activities being overwritten/over-ided.
 
 // export class userActivity extends User {
 //   constructor(activity, time, energy, urgency, loc) {

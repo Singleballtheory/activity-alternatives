@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container {
+  padding-top: 3%;
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+}

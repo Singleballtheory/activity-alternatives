@@ -1,4 +1,4 @@
-import {User, userActivity} from '/activities.js';
+import {userActivity} from './activities.js';
 
 export let hike = new userActivity("take a hike", "120", "medium", "low", "outside");
 
