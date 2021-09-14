@@ -4,47 +4,46 @@
   <title>This Robot Will Tell You How to Live Better</title>
 </head>
 <body>
-  <h1>This Robot Will Tell You How to Live Better</h1>
-  <p>Blor blor blor</p>
-  <form action="">
-
+  <h1 id="titleLine">This Robot Will Tell You How to Live Better</h1>
+  <h3>Hello, <span id="nameDisplay"></span></h3>
+  <form id="yourName">
+    <label for="nameInput">What's your name?</label>
+    <input id="nameInput" type="text">
+    <button id="submitUser">Submit</button>
   </form>
-  <!-- Inspirational or uninspirational quote depending on productive mode/unproductive mode
-    
-    form for inputting your to-dos/activities:
-- activity name
-- how long does it take?
-- energy level
-- activity level
-- weather dependent?
-- stay at home or go out [into the danger zone]
--- What are our example/pre-builts here?
---- Take a hike, buddy! 
---- Exercise! [cultivate mass]
---- Journal 15m-1h
---- Read a chapter of a book
---- Meditate
---- Clean something
---- Take care of your plants and/or pets and/or children, you bum
-
-  form for selecting something from the user-made to do list
-  - how much time do you have rn?
-  - what's your energy level?
-  - how active do you want to be?
-  - do you want to leave the house?
-  - what's the weather like?
-  -- Just give me a random item from my list
-
-  form for find a random activity
-  - this will be api dependent
-
-  reverse app form to find a way to waste time
-    - how much time do you have rn?
-  - what's your energy level?
-  - how active do you want to be?
-  - do you want to leave the house?
-  - what's the weather like?
-  -- Just give me a random item from the list -->
   
+  <form id="newActivity">
+    <label for="activity">What do you want to do?</label>
+    <input id="activity" type="text">
+    <label for="time">How much time does this take?</label>
+    <select name="time" id="time">
+      <option value="15">15 minutes</option>
+      <option value="30">30 minutes</option>
+      <option value="60">1 hour</option>
+      <option value="120">2 hours</option>
+    </select>
+    ​  <label for="energy">How much energy does this take?</label>
+    <select name="energy" id="energy">
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+    </select>
+    ​  <label for="urgency">How urgent is this?</label>
+    <select name="urgency" id="urgency">
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+    </select>
+    ​  <label for="loc">Where does this activity take place?</label>
+    <select name="loc" id="loc">
+      <option value="at home">At Home</option>
+      <option value="away from home">Away from Home</option>
+    </select>
+    <br><br>
+    <button id="submitActivities">Submit</button>
+  </form>
+  <h3><span id="activityDisplay"></span></h3>
 </body>
 </html>
