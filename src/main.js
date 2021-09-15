@@ -15,6 +15,7 @@ import {User, userActivity} from './js/activities.js';
 
 $(document).ready(function() {
   let user;
+  let activityArray = [];
   $('#submitUser').click(function(event) {
     event.preventDefault();
     const name = $('#nameInput').val();
@@ -50,13 +51,14 @@ $(document).ready(function() {
     $('#urgency').val("");
     $('#loc').val("");
     const newActivity = new userActivity(activity, time, energy, urgency, loc);
-    const newActivity2 = new userActivity("prance", "60", "medium", "high", "outside");
-    const newActivity3 = new userActivity("drive rocket", "120", "high", "high", "outside");
-    const newActivity4 = new userActivity("take a nice nap", "30", "low", "medium", "at home");
+    // const newActivity2 = new userActivity("prance", "60", "medium", "high", "outside");
+    // const newActivity3 = new userActivity("drive rocket", "120", "high", "high", "outside");
+    // const newActivity4 = new userActivity("take a nice nap", "30", "low", "medium", "at home");
     user.addActivity(newActivity);
-    user.addActivity(newActivity2);
-    user.addActivity(newActivity3);
-    user.addActivity(newActivity4);
+    // user.addActivity(newActivity2);
+    // user.addActivity(newActivity3);
+    // user.addActivity(newActivity4);
+    activityArray.push(Object.values(user.activities[user.currentId]));
     console.log(user.findActivity(2), "this is the findActivity console log");
 
     $('#activityDisplay').html(`${newActivity.activity + " " + newActivity.time + " " +  newActivity.energy + " " +  newActivity.urgency + " " + newActivity.loc + " " + newActivity.id}`);
@@ -68,10 +70,12 @@ $(document).ready(function() {
     event.preventDefault();
     $('#activityDisplay').html(`${JSON.stringify(user.activities)}`);
   
-    let activityArray = [];
-    activityArray.push(Object.values(user.activities[1]));
-    activityArray.push(Object.values(user.activities[2]));
-    activityArray.push(Object.values(user.activities[3]));
+    // activityArray.push(Object.values(user.activities[user.currentId]));
+    // activityArray.push(Object.values(user.activities[2]));
+    // activityArray.push(Object.values(user.activities[3]));
+    // activityArray.push(Object.values(user.activities[4]));
+
+    // "1":{"activity":"Run","time":"15","energy":"low","urgency":"low","loc":"at home","id":1},
 
     // 0: Activity Name | 1: Time | 2: Energy | 3: Urgency | 4: Home/Away | 5: ID
     
