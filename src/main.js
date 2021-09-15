@@ -97,8 +97,15 @@ $(document).ready(function() {
           displayList.html(htmlForDisplay);
         }
       } else {
+        if (timeMatchArray === []) {
         htmlForDisplay += "<li> No matches</li>";
         displayList.html(htmlForDisplay);
+        }
+        else if (parseInt(activityArray[i][1]) > parseInt(userInput)) {
+          htmlForDisplay = "";
+          htmlForDisplay += "<li> No matches</li>";
+        displayList.html(htmlForDisplay);
+        }
       }
       // displayList.html(htmlForDisplay);
     }
