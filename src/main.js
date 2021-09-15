@@ -92,9 +92,11 @@ $(document).ready(function() {
     let timeMatchArray = [];
     let displayList = $("ul#displayArray");
     let htmlForDisplay = "";
-    const userInput = $("input#timeAvail").val();
+    const userTime = $("input#timeAvail").val();
+    const userEnergy = $("select#energyAvail").val();
+    const userTravel = $("select#leaveHouse").val();
     for (let i = 0; i < activityArray.length; i++) {
-      if (parseInt(activityArray[i][1]) <= parseInt(userInput)) {
+      if (parseInt(activityArray[i][1]) <= parseInt(userTime) && (activityArray[i][2]) === userEnergy && (activityArray[i][4]) === userTravel) {
         timeMatchArray.push(activityArray[i]);
         console.log(timeMatchArray);
         htmlForDisplay = "";
@@ -109,7 +111,7 @@ $(document).ready(function() {
         htmlForDisplay += "<li> No matches</li>";
         displayList.html(htmlForDisplay);
         }
-        else if (parseInt(activityArray[i][1]) > parseInt(userInput)) {
+        else if (parseInt(activityArray[i][1]) > parseInt(userTime)) {
           htmlForDisplay = "";
           htmlForDisplay += "<li> No matches</li>";
         displayList.html(htmlForDisplay);
