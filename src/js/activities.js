@@ -18,6 +18,7 @@ export class User {
     }
     return false;
   }
+  
 }
 
 export class userActivity {
@@ -32,7 +33,11 @@ export class userActivity {
 }
 
 
-// with multiple users, we would need to avoid already-added activities being overwritten/over-ided.
+// so I think maybe what we would want for filtering through the objects would be a loop in a loop. One loop loops through all of the user.activities and inside that loop, there's a loop that checks criteria. Like, does energy === high?
+
+
+
+
 
 // export class userActivity extends User {
 //   constructor(activity, time, energy, urgency, loc) {
