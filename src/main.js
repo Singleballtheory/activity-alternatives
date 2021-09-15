@@ -22,8 +22,8 @@ $(document).ready(function() {
     user = new User(name);
     console.log(user);
     $('#nameDisplay').html(`${user.name}`);
-    $('#titleLine').hide();
     $("#usersName").show();
+    $("#yourName").hide();
     return user;
   });
 
@@ -52,18 +52,12 @@ $(document).ready(function() {
     $('#urgency').val("");
     $('#loc').val("");
     const newActivity = new userActivity(activity, time, energy, urgency, loc);
-    // const newActivity2 = new userActivity("prance", "60", "medium", "high", "outside");
-    // const newActivity3 = new userActivity("drive rocket", "120", "high", "high", "outside");
-    // const newActivity4 = new userActivity("take a nice nap", "30", "low", "medium", "at home");
     user.addActivity(newActivity);
-    // user.addActivity(newActivity2);
-    // user.addActivity(newActivity3);
-    // user.addActivity(newActivity4);
     activityArray.push(Object.values(user.activities[user.currentId]));
     console.log(user.findActivity(2), "this is the findActivity console log");
 
-    $('#activityDisplay').html(`${newActivity.activity + " " + newActivity.time + " " +  newActivity.energy + " " +  newActivity.urgency + " " + newActivity.loc + " " + newActivity.id}`);
-    return newActivity;
+    // $('#activityDisplay').html(`${newActivity.activity + " " + newActivity.time + " " +  newActivity.energy + " " +  newActivity.urgency + " " + newActivity.loc + " " + newActivity.id}`);
+    // return newActivity;
 
   });
 
@@ -95,30 +89,20 @@ $(document).ready(function() {
       if (parseInt(activityArray[i][1]) <= parseInt(userInput)) {
         timeMatchArray.push(activityArray[i]);
         console.log(timeMatchArray);
-        $("#activityDisplay").html(timeMatchArray);
+        htmlForDisplay = "";
+        // $("#activityDisplay").html(timeMatchArray);
 
         for (let i = 0; i < timeMatchArray.length; i++) {
           htmlForDisplay += "<li id=" + this.currentId + ">" + activityArray[i][0] + "<ul>" + "<li>Urgency:" + activityArray[i][3] + "</li>" + "<li>Required Time:" + activityArray[i][1] + "</li>" + "<li>Required Energy:" + activityArray[i][2] + "</li>" + "<li>Home or Away?:" + activityArray[i][4] + "</li>" + "</ul></li>";
+          displayList.html(htmlForDisplay);
         }
       } else {
         htmlForDisplay += "<li> No matches</li>";
+        displayList.html(htmlForDisplay);
       }
-      displayList.html(htmlForDisplay);
+      // displayList.html(htmlForDisplay);
     }
   });
-
-    // 0: Activity Name | 1: Time | 2: Energy | 3: Urgency | 4: Home/Away | 5: ID
-
-  //   $('#energyCheck').click(function(event) {
-  //   event.preventDefault();
-  //   for (let i = 0; i < activityArray.length; i++) { 
-  // $("#displayArray").html("<li>" + activityArray[i][0] + "</li>");
-  //   $("#displayArray").html("<li>" + activityArray[i][1] + "</li>");
-  //   $("#displayArray").html("<li>" + activityArray[i][2] + "</li>");
-  //   $("#displayArray").html("<li>" + activityArray[i][3] + "</li>");
-  //   $("#displayArray").html("<li>" + activityArray[i][4] + "</li>");
-  //   }
-  // });
 
   // 0: Activity Name | 1: Time | 2: Energy | 3: Urgency | 4: Home/Away | 5: ID
 
