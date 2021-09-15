@@ -27,3 +27,16 @@ h1 {
 #doneAdding {
   display:none;
 }
+
+#userList {
+  float:right;
+  width:300px;
+  min-height:200px;
+  box-sizing: border-box;
+  padding:5px;
+  border: 1px solid black;
+}
+
+ul#userListBase ul li {
+  display:none;
+}

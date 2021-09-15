@@ -58,6 +58,14 @@ $(document).ready(function() {
 
     // $('#activityDisplay').html(`${newActivity.activity + " " + newActivity.time + " " +  newActivity.energy + " " +  newActivity.urgency + " " + newActivity.loc + " " + newActivity.id}`);
     // return newActivity;
+    let displayList = $("ul#userListBase");
+    let htmlForDisplay = "";
+    // Start full info display version
+    for (let i = 0; i < activityArray.length; i++) {
+      htmlForDisplay += "<li id=" + this.currentId + ">" + activityArray[i][0] + "<ul>" + "<li>Urgency:" + activityArray[i][3] + "</li>" + "<li>Required Time:" + activityArray[i][1] + "</li>" + "<li>Required Energy:" + activityArray[i][2] + "</li>" + "<li>Home or Away?:" + activityArray[i][4] + "</li>" + "</ul></li>";
+      displayList.html(htmlForDisplay);
+    }
+    // End full info display version
 
   });
 

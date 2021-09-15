@@ -17,37 +17,39 @@
       <input id="nameInput" type="text">
       <button id="submitUser">Submit</button>
     </form>
+    <div id="userList">
+      <h4>Your List</h4>
+      <ul id="userListBase"></ul>
+    </div>
     <div id="activityInputForms">
       <form id="newActivity">
         <label for="activity">What do you want to do?</label>
-        <input id="activity" type="text">
+        <input id="activity" type="text"><br />
         <label for="time">How much time does this take?</label>
         <select name="time" id="time">
           <option value="15">15 minutes</option>
           <option value="30">30 minutes</option>
           <option value="60">1 hour</option>
           <option value="120">2 hours</option>
-        </select>
+        </select><br />
         ​  <label for="energy">How much energy does this take?</label>
         <select name="energy" id="energy">
           <option value="low">Low</option>
           <option value="medium">Medium</option>
           <option value="high">High</option>
-        </select>
-        </select>
+        </select><br />
         ​  <label for="urgency">How urgent is this?</label>
         <select name="urgency" id="urgency">
           <option value="low">Low</option>
           <option value="medium">Medium</option>
           <option value="high">High</option>
-        </select>
-        </select>
+        </select><br />
         ​  <label for="loc">Where does this activity take place?</label>
         <select name="loc" id="loc">
           <option value="at home">At Home</option>
           <option value="outside">Outside</option>
         </select>
-        <br><br>
+        <br>
         <button id="submitActivities">Add Activity</button>
       </form>
     </div>
