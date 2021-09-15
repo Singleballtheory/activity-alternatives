@@ -4,17 +4,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import {User, userActivity} from './js/activities.js';
 // import prebuiltArray from './js/prebuilts.js';
-import quoteService from './js/quotes.js';
+import Service from './js/quotes.js';
 
 
 
 $(document).ready(function() {
   let user;
   let activityArray = [];
-  quoteService.getQuote().then(function(response) {
+  let promise = Service.getQuote();
+  promise.then(function(response) {
     const body = JSON.parse(response);
-    $('#quote').append(`${body[0].h}`);
-    $('#quote').html(`Hello`);
+    let i = body[Math.floor(Math.random()*body.length)];
+    $('#quote').html(i.text);
+    $('#quote2').html(i.author);
   });
   $('#submitUser').click(function(event) {
     event.preventDefault();
@@ -94,9 +96,9 @@ $(document).ready(function() {
     let htmlForDisplay = "";
     const userTime = $("input#timeAvail").val();
     const userEnergy = $("select#energyAvail").val();
-    const userTravel = $("select#leaveHouse").val();
+    // const userTravel = $("select#leaveHouse").val();
     for (let i = 0; i < activityArray.length; i++) {
-      if (parseInt(activityArray[i][1]) <= parseInt(userTime) && (activityArray[i][2]) === userEnergy && (activityArray[i][4]) === userTravel) {
+      if (parseInt(activityArray[i][1]) <= parseInt(userTime) && (activityArray[i][2]) === userEnergy) {
         timeMatchArray.push(activityArray[i]);
         console.log(timeMatchArray);
         htmlForDisplay = "";

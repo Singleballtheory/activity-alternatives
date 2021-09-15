@@ -1,8 +1,8 @@
-export default class quoteService {
+export default class Service {
   static getQuote() {
     return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
-      const url = `https://zenquotes.io/api/random`;
+      const url = `https://type.fit/api/quotes`;
       request.onload = function() {
         if (this.status === 200) {
           resolve(request.response);
@@ -11,7 +11,7 @@ export default class quoteService {
         }
       };
       request.open("GET", url, true);
-      request.send;
+      request.send();
     });
   }
 }
