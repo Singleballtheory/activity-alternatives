@@ -9,47 +9,65 @@
       <span id="quote"></span>
     </div>
     <h1 id="titleLine">This Robot Will Tell You How to Live Better</h1>
-    <h3>Hello, <span id="nameDisplay"></span></h3>
+    <div id="usersName">
+      <h3>Hello, <span id="nameDisplay"></span></h3>
+    </div>
     <form id="yourName">
       <label for="nameInput">What's your name?</label>
       <input id="nameInput" type="text">
       <button id="submitUser">Submit</button>
     </form>
-    
-    <form id="newActivity">
-      <label for="activity">What do you want to do?</label>
-      <input id="activity" type="text">
-      <label for="time">How much time does this take?</label>
-      <select name="time" id="time">
-        <option value="15">15 minutes</option>
-        <option value="30">30 minutes</option>
-        <option value="60">1 hour</option>
-        <option value="120">2 hours</option>
-      </select>
-      ​  <label for="energy">How much energy does this take?</label>
-      <select name="energy" id="energy">
-        <option value="low">Low</option>
-        <option value="medium">Medium</option>
-        <option value="high">High</option>
-      </select>
-      </select>
-      ​  <label for="urgency">How urgent is this?</label>
-      <select name="urgency" id="urgency">
-        <option value="low">Low</option>
-        <option value="medium">Medium</option>
-        <option value="high">High</option>
-      </select>
-      </select>
-      ​  <label for="loc">Where does this activity take place?</label>
-      <select name="loc" id="loc">
-        <option value="at home">At Home</option>
-        <option value="outside">Outside</option>
-      </select>
-      <br><br>
-      <button id="submitActivities">Submit</button>
-    </form>
-    <button id="showActivities">See All Activities</button>
-    <button id="energyCheck">Energy Check</button>
+    <div id="activityInputForms">
+      <form id="newActivity">
+        <label for="activity">What do you want to do?</label>
+        <input id="activity" type="text">
+        <label for="time">How much time does this take?</label>
+        <select name="time" id="time">
+          <option value="15">15 minutes</option>
+          <option value="30">30 minutes</option>
+          <option value="60">1 hour</option>
+          <option value="120">2 hours</option>
+        </select>
+        ​  <label for="energy">How much energy does this take?</label>
+        <select name="energy" id="energy">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        </select>
+        ​  <label for="urgency">How urgent is this?</label>
+        <select name="urgency" id="urgency">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        </select>
+        ​  <label for="loc">Where does this activity take place?</label>
+        <select name="loc" id="loc">
+          <option value="at home">At Home</option>
+          <option value="outside">Outside</option>
+        </select>
+        <br><br>
+        <button id="submitActivities">Add Activity</button>
+      </form>
+    </div>
+
+    <button id="activityInputs">Add Activities to Your List</button>
+
+
+    <!-- <button id="showActivities">See All Activities</button> -->
+    <!-- <button id="energyCheck">Energy Check</button> -->
+
+    <button id="findActiv">Find Something to Do</button>
+    <button id="doneAdding">Done Adding</button>
+
+    <div id="checkForm">
+      <form id="checkTime">
+        <label for="timeAvail" id="timeAvail"><p>How much time do you have?</p></label>
+        <input class="form-control" type="number" id="timeAvail" name="timeAvail">
+        <button id="timeCheck" type="submit">Submit</button>
+      </form>
+    </div>
     <h5><span id="activityDisplay"></span></h5>
   </div>
 </body>

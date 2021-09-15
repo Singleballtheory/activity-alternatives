@@ -4,18 +4,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import {User, userActivity} from './js/activities.js';
 // import prebuiltArray from './js/prebuilts.js';
-// import quoteService from './js/quotes.js';
+import quoteService from './js/quotes.js';
 
-// let promise = quoteService.getQuote();
-// promise.then(function(response) {
-//   const quote = JSON.parse(response);
-//   console.log(quote.h);
-//   $('#quote').html(`${quote.h}`);
-// });
+
 
 $(document).ready(function() {
   let user;
   let activityArray = [];
+  let promise = quoteService.getQuote();
+  promise.then(function(response) {
+    const body = JSON.parse(response);
+    $('#quote').append(`${body[0].h}`);
+  });
   $('#submitUser').click(function(event) {
     event.preventDefault();
     const name = $('#nameInput').val();
@@ -23,6 +23,7 @@ $(document).ready(function() {
     console.log(user);
     $('#nameDisplay').html(`${user.name}`);
     $('#titleLine').hide();
+    $("#usersName").show();
     return user;
   });
 
@@ -66,31 +67,64 @@ $(document).ready(function() {
 
   });
 
-  $('#showActivities').click(function(event) {
+  // $('#showActivities').click(function(event) {
+  //   event.preventDefault();
+  //   $('#activityDisplay').html(`${JSON.stringify(user.activities)}`);
+  // });
+
+  // $('#energyCheck').click(function(event) {
+  //   event.preventDefault();
+  //   for (let i = 0; i < activityArray.length; i++) { 
+  //     if (activityArray[i][2] === "low") {
+  //       console.log("low" + " " + activityArray[i][0]);
+  //     } else if (activityArray[i][2] === "medium") {
+  //       console.log("medium" + " " + activityArray[i][0]);
+  //     } else { 
+  //       console.log("high" + " " + activityArray[i][0]);
+  //     }
+  //   }
+  // });
+
+  $('#timeCheck').click(function(event) {
     event.preventDefault();
-    $('#activityDisplay').html(`${JSON.stringify(user.activities)}`);
-  
-    // activityArray.push(Object.values(user.activities[user.currentId]));
-    // activityArray.push(Object.values(user.activities[2]));
-    // activityArray.push(Object.values(user.activities[3]));
-    // activityArray.push(Object.values(user.activities[4]));
-
-    // "1":{"activity":"Run","time":"15","energy":"low","urgency":"low","loc":"at home","id":1},
-
-    // 0: Activity Name | 1: Time | 2: Energy | 3: Urgency | 4: Home/Away | 5: ID
-    
-    $('#energyCheck').click(function(event) {
-      event.preventDefault();
-      for (let i = 0; i < activityArray.length; i++) { 
-        if (activityArray[i][2] === "low") {
-          console.log("low" + " " + activityArray[i][0]);
-        } else if (activityArray[i][2] === "medium") {
-          console.log("medium" + " " + activityArray[i][0]);
-        } else {
-          console.log("high" + " " + activityArray[i][0]);
-        }
+    let timeMatchArray = [];
+    const userInput = $("input#timeAvail").val();
+    for (let i = 0; i < activityArray.length; i++) {
+      if (parseInt(activityArray[i][1]) <= parseInt(userInput)) {
+        timeMatchArray.push(activityArray[i]);
+        console.log(timeMatchArray);
+      } else {
+        console.log("no matches");
       }
-    });
-
+    }
   });
+
+
+  // 0: Activity Name | 1: Time | 2: Energy | 3: Urgency | 4: Home/Away | 5: ID
+
+  $('#activityInputs').click(function(event) {
+    event.preventDefault();
+    $("#activityInputForms").show();
+    $("#activityInputs").hide();
+    $("#doneAdding").show();
+  });
+  
+  $('#findActiv').click(function(event) {
+    event.preventDefault();
+    $("#checkForm").show();
+  });
+
+  $("#doneAdding").click(function(event) {
+    event.preventDefault();
+    $("#activityInputForms").hide();
+    $("#doneAdding").hide();
+    $("#activityInputs").show();
+  });
+
 });
+
+
+// activityArray.push(Object.values(user.activities[user.currentId]));
+// activityArray.push(Object.values(user.activities[2]));
+// activityArray.push(Object.values(user.activities[3]));
+// activityArray.push(Object.values(user.activities[4]));

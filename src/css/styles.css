@@ -11,3 +11,19 @@ body {
 h1 {
   font-family: 'Orbitron', sans-serif;
 }
+
+#checkForm {
+  display:none;
+}
+
+#activityInputForms {
+  display:none;
+}
+
+#usersName {
+  display:none;
+}
+
+#doneAdding {
+  display:none;
+}
