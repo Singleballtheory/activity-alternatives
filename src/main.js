@@ -67,23 +67,26 @@ $(document).ready(function() {
   $('#showActivities').click(function(event) {
     event.preventDefault();
     $('#activityDisplay').html(`${JSON.stringify(user.activities)}`);
-    let newArray = (`${JSON.stringify(user.activities)}`).split("},");
-    console.log(newArray + "this is the new array" + newArray[0]);
-    // let arrayTest2 = ((`${JSON.stringify(user.activities)}`).replace(/['"]+/g, '').replace(/[{}]/g, ""));
-    // console.log(arrayTest2 + "arrayTest2");
-    // console.log(arrayTest2[1] + "arrayTest2[1]");
-    // console.log("New Array 1" + newArray[0]);
-    let newNewArray = Object.entries(user.activities[1]);
-    console.log(newNewArray + "newNewArray");
-    let thirdArray = Object.values(user.activities[1]);
-    console.log(thirdArray + "thirdArray");
-    if (thirdArray[4] === "at home") {
-      console.log("true");
-    } else {
-      console.log("poops");
-    }
+  
+    let activityArray = [];
+    activityArray.push(Object.values(user.activities[1]));
+    activityArray.push(Object.values(user.activities[2]));
+    activityArray.push(Object.values(user.activities[3]));
+
     // 0: Activity Name | 1: Time | 2: Energy | 3: Urgency | 4: Home/Away | 5: ID
+    
+    $('#energyCheck').click(function(event) {
+      event.preventDefault();
+      for (let i = 0; i < activityArray.length; i++) { 
+        if (activityArray[i][2] === "low") {
+          console.log("low" + " " + activityArray[i][0]);
+        } else if (activityArray[i][2] === "medium") {
+          console.log("medium" + " " + activityArray[i][0]);
+        } else {
+          console.log("high" + " " + activityArray[i][0]);
+        }
+      }
+    });
+
   });
 });
-
-//{"1":{"activity":"Run","time":"15","energy":"low","urgency":"low","loc":"at home","id":1},"2":{"activity":"prance","time":"60","energy":"medium","urgency":"high","loc":"outside","id":2},"3":{"activity":"drive rocket","time":"120","energy":"high","urgency":"high","loc":"outside","id":3},"4":{"activity":"take a nice nap","time":"30","energy":"low","urgency":"medium","loc":"at home","id":4}}
