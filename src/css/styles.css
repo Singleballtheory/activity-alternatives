@@ -40,3 +40,10 @@ h1 {
 ul#userListBase ul li {
   display:none;
 }
+
+#activityInputs {
+display:none;
+}
+#findActiv {
+  display:none;
+}

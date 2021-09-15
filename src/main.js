@@ -15,8 +15,8 @@ $(document).ready(function() {
   promise.then(function(response) {
     const body = JSON.parse(response);
     let i = body[Math.floor(Math.random()*body.length)];
-    $('#quote').html(i.text);
-    $('#quote2').html(i.author);
+    $('#quote').html("' " + i.text + " '");
+    $('#author').html("-- " + i.author);
   });
   $('#submitUser').click(function(event) {
     event.preventDefault();
@@ -26,6 +26,8 @@ $(document).ready(function() {
     $('#nameDisplay').html(`${user.name}`);
     $("#usersName").show();
     $("#yourName").hide();
+    $("#activityInputs").show();
+    $("#findActiv").show();
     return user;
   });
 
@@ -95,28 +97,23 @@ $(document).ready(function() {
     let displayList = $("ul#displayArray");
     let htmlForDisplay = "";
     const userTime = $("input#timeAvail").val();
-    const userEnergy = $("select#energyAvail").val();
+    // const userEnergy = $("select#energyAvail").val();
     // const userTravel = $("select#leaveHouse").val();
     for (let i = 0; i < activityArray.length; i++) {
-      if (parseInt(activityArray[i][1]) <= parseInt(userTime) && (activityArray[i][2]) === userEnergy) {
+      if (parseInt(activityArray[i][1]) <= parseInt(userTime)) {
         timeMatchArray.push(activityArray[i]);
         console.log(timeMatchArray);
         htmlForDisplay = "";
         // $("#activityDisplay").html(timeMatchArray);
-
+// so basically, we need if userEnergy === "high" then push any that match low || med || high
         for (let i = 0; i < timeMatchArray.length; i++) {
           htmlForDisplay += "<li id=" + this.currentId + ">" + activityArray[i][0] + "<ul>" + "<li>Urgency:" + activityArray[i][3] + "</li>" + "<li>Required Time:" + activityArray[i][1] + "</li>" + "<li>Required Energy:" + activityArray[i][2] + "</li>" + "<li>Home or Away?:" + activityArray[i][4] + "</li>" + "</ul></li>";
           displayList.html(htmlForDisplay);
         }
       } else {
         if (timeMatchArray === []) {
-        htmlForDisplay += "<li> No matches</li>";
-        displayList.html(htmlForDisplay);
-        }
-        else if (parseInt(activityArray[i][1]) > parseInt(userTime)) {
-          htmlForDisplay = "";
           htmlForDisplay += "<li> No matches</li>";
-        displayList.html(htmlForDisplay);
+          displayList.html(htmlForDisplay);
         }
       }
       // displayList.html(htmlForDisplay);
