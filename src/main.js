@@ -11,10 +11,10 @@ import quoteService from './js/quotes.js';
 $(document).ready(function() {
   let user;
   let activityArray = [];
-  let promise = quoteService.getQuote();
-  promise.then(function(response) {
+  quoteService.getQuote().then(function(response) {
     const body = JSON.parse(response);
     $('#quote').append(`${body[0].h}`);
+    $('#quote').html(`Hello`);
   });
   $('#submitUser').click(function(event) {
     event.preventDefault();
@@ -93,12 +93,30 @@ $(document).ready(function() {
       if (parseInt(activityArray[i][1]) <= parseInt(userInput)) {
         timeMatchArray.push(activityArray[i]);
         console.log(timeMatchArray);
+        $("#activityDisplay").html(timeMatchArray);
+        for (let i = 0; i < timeMatchArray.length; i++) {
+          $("#displayArray").html("<li>" + activityArray[i][0] + "</li>");
+          $("#displayArray").html("<li>" + activityArray[i][1] + "</li>");
+          $("#displayArray").html("<li>" + activityArray[i][2] + "</li>");
+          $("#displayArray").html("<li>" + activityArray[i][3] + "</li>");
+          $("#displayArray").html("<li>" + activityArray[i][4] + "</li>");
+        }
       } else {
-        console.log("no matches");
+        $("#activityDisplay").text("no matches");
       }
     }
   });
 
+  //   $('#energyCheck').click(function(event) {
+  //   event.preventDefault();
+  //   for (let i = 0; i < activityArray.length; i++) { 
+  // $("#displayArray").html("<li>" + activityArray[i][0] + "</li>");
+  //   $("#displayArray").html("<li>" + activityArray[i][1] + "</li>");
+  //   $("#displayArray").html("<li>" + activityArray[i][2] + "</li>");
+  //   $("#displayArray").html("<li>" + activityArray[i][3] + "</li>");
+  //   $("#displayArray").html("<li>" + activityArray[i][4] + "</li>");
+  //   }
+  // });
 
   // 0: Activity Name | 1: Time | 2: Energy | 3: Urgency | 4: Home/Away | 5: ID
 
