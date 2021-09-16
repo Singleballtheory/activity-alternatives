@@ -28,6 +28,7 @@ $(document).ready(function() {
     $("#yourName").hide();
     $("#activityInputs").show();
     $("#findActiv").show();
+    $("#randomActivity").show();
     return user;
   });
 
