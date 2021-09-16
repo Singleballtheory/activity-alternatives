@@ -3,7 +3,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import {User, userActivity} from './js/activities.js';
-// import prebuiltArray from './js/prebuilts.js';
+import prebuiltArray from './js/prebuilts.js';
 import Service from './js/quotes.js';
 
 
@@ -90,6 +90,13 @@ $(document).ready(function() {
   //     }
   //   }
   // });
+  $('#randomActivity').click(function(event) {
+    event.preventDefault();
+    let randomActivity = prebuiltArray[Math.floor(Math.random()*prebuiltArray.length)];
+    console.log(randomActivity);
+    $('#randomAct').html(`${randomActivity.activity}`);
+  });
+
 
   $('#timeCheck').click(function(event) {
     event.preventDefault();
@@ -97,15 +104,17 @@ $(document).ready(function() {
     let displayList = $("ul#displayArray");
     let htmlForDisplay = "";
     const userTime = $("input#timeAvail").val();
-    // const userEnergy = $("select#energyAvail").val();
+    const userEnergy = $("select#energyAvail").val();
     // const userTravel = $("select#leaveHouse").val();
     for (let i = 0; i < activityArray.length; i++) {
       if (parseInt(activityArray[i][1]) <= parseInt(userTime)) {
         timeMatchArray.push(activityArray[i]);
         console.log(timeMatchArray);
+        console.log(userEnergy + " userEnergy");
+        console.log(activityArray[i][2] + activityArray[i][0]+ "current index energy");
         htmlForDisplay = "";
         // $("#activityDisplay").html(timeMatchArray);
-// so basically, we need if userEnergy === "high" then push any that match low || med || high
+        // so basically, we need if userEnergy === "high" then push any that match low || med || high
         for (let i = 0; i < timeMatchArray.length; i++) {
           htmlForDisplay += "<li id=" + this.currentId + ">" + activityArray[i][0] + "<ul>" + "<li>Urgency:" + activityArray[i][3] + "</li>" + "<li>Required Time:" + activityArray[i][1] + "</li>" + "<li>Required Energy:" + activityArray[i][2] + "</li>" + "<li>Home or Away?:" + activityArray[i][4] + "</li>" + "</ul></li>";
           displayList.html(htmlForDisplay);

@@ -24,6 +24,8 @@
       <h4>Your List</h4>
       <ul id="userListBase"></ul>
     </div>
+
+    <!-- start of user-added activities form -->
     <div id="activityInputForms">
       <form id="newActivity">
         <label for="activity">What do you want to do?</label>
@@ -37,9 +39,9 @@
         </select><br />
         ​  <label for="energy">How much energy does this take?</label>
         <select name="energy" id="energy">
-          <option value="low">Low</option>
-          <option value="medium">Medium</option>
-          <option value="high">High</option>
+          <option value="1">Low</option>
+          <option value="2">Medium</option>
+          <option value="3">High</option>
         </select><br />
         ​  <label for="urgency">How urgent is this?</label>
         <select name="urgency" id="urgency">
@@ -57,6 +59,8 @@
       </form>
     </div>
 
+    <!-- end of user-added activities form -->
+
     <button id="activityInputs">Add Activities to Your List</button>
 
 
@@ -64,6 +68,7 @@
     <!-- <button id="energyCheck">Energy Check</button> -->
 
     <button id="findActiv">Find Something to Do</button>
+    <button id="randomActivity">Get a Rando</button>
     <button id="doneAdding">Done Adding</button>
 
     <div id="checkForm">
@@ -75,9 +80,9 @@
         <div class="form-group">
         <label for="energyAvail" id="energyAvail"><p>What's your energy level?</p></label>
         <select name="energyAvail" id="energyAvail">
-          <option value="low">Low</option>
-          <option value="medium">Medium</option>
-          <option value="high">High</option>
+          <option value="1">Low</option>
+          <option value="2">Medium</option>
+          <option value="3">High</option>
         </select><br />
         </div>
         <!-- <div class="form-group">
@@ -93,7 +98,9 @@
     <div id="yourActivities">
       <ul id="displayArray"></ul>
     <p><span id="activityDisplay"></span></p>
+    <p><span id="randomAct"></span></p>
     </div>
   </div>
+
 </body>
 </html>

@@ -14,11 +14,6 @@ export let prebuiltArray = [hike, bike, puzzle, meditate, read, water, journal, 
 
 
 
-let randomActivity = [];
-for (let r = 0; r < prebuiltArray.length; i++) {
-  return randomActivity;
-}
-
 // ["It will probably get worse.", "I can but I won't.", "You are one in a million and there are 7,700 others just like you.", "It's okay to give up on your dreams.", "There is no 'U' in 'Happy'", "Be yourself. No one else wants to be you.", "Every day is another chance to screw everything up again.", "Every tattoo is a temporary tattoo because we are all slowly dying.", "If you hate yourself, remember that you are not alone. A lot of other people hate you too.", ""]
 
 
