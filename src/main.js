@@ -98,15 +98,14 @@ $(document).ready(function() {
     $('#randomAct').html(`${randomActivity.activity}`);
   });
 
-
+  let timeMatchArray = [];
+  let displayList = $("ul#displayArray");
+  let htmlForDisplay = "";
   $('#timeCheck').click(function(event) {
     event.preventDefault();
-    let timeMatchArray = [];
-    let displayList = $("ul#displayArray");
-    let htmlForDisplay = "";
+    $("#advFilters").show();
     const userTime = $("input#timeAvail").val();
     const userEnergy = $("select#energyAvail").val();
-    // const userTravel = $("select#leaveHouse").val();
     for (let i = 0; i < activityArray.length; i++) {
       if (parseInt(activityArray[i][1]) <= parseInt(userTime)) {
         timeMatchArray.push(activityArray[i]);
@@ -130,6 +129,72 @@ $(document).ready(function() {
     }
   });
 
+    // Start of Advanced Activity Filters
+    let finalArray = [];
+    $('input[name=low]').change(function(){
+      finalArray = [];
+      if($(this).is(':checked')) {
+        for (let i = 0; i < timeMatchArray.length; i++) {
+          if (parseInt(timeMatchArray[i][2]) === parseInt("1")) {
+            finalArray.push(activityArray[i]);
+            htmlForDisplay = "";
+            for (let i = 0; i < finalArray.length; i++) {
+              htmlForDisplay += "<li id=" + this.currentId + ">" + finalArray[i][0] + "<ul>" + "<li>Urgency:" + finalArray[i][3] + "</li>" + "<li>Required Time:" + finalArray[i][1] + "</li>" + "<li>Required Energy:" + finalArray[i][2] + "</li>" + "<li>Home or Away?:" + finalArray[i][4] + "</li>" + "</ul></li>";
+              displayList.html(htmlForDisplay);
+            }
+          } else {
+            if (timeMatchArray === []) {
+              htmlForDisplay += "<li> No matches</li>";
+              displayList.html(htmlForDisplay);
+            }
+          }
+        }
+      }
+    });
+  
+    $('input[name=medium]').change(function(){
+      finalArray = [];
+      if($(this).is(':checked')) {
+        for (let i = 0; i < timeMatchArray.length; i++) {
+          if (parseInt(timeMatchArray[i][2]) <= parseInt("2")) {
+            finalArray.push(activityArray[i]);
+            htmlForDisplay = "";
+            for (let i = 0; i < finalArray.length; i++) {
+              htmlForDisplay += "<li id=" + this.currentId + ">" + finalArray[i][0] + "<ul>" + "<li>Urgency:" + finalArray[i][3] + "</li>" + "<li>Required Time:" + finalArray[i][1] + "</li>" + "<li>Required Energy:" + finalArray[i][2] + "</li>" + "<li>Home or Away?:" + finalArray[i][4] + "</li>" + "</ul></li>";
+              displayList.html(htmlForDisplay);
+            }
+          } else {
+            if (timeMatchArray === []) {
+              htmlForDisplay += "<li> No matches</li>";
+              displayList.html(htmlForDisplay);
+            }
+          }
+        }
+      }
+    });
+  
+    $('input[name=high]').change(function(){
+      finalArray = [];
+      if($(this).is(':checked')) {
+        for (let i = 0; i < timeMatchArray.length; i++) {
+          if (parseInt(timeMatchArray[i][2]) <= parseInt("3")) {
+            finalArray.push(activityArray[i]);
+            htmlForDisplay = "";
+            for (let i = 0; i < finalArray.length; i++) {
+              htmlForDisplay += "<li id=" + this.currentId + ">" + finalArray[i][0] + "<ul>" + "<li>Urgency:" + finalArray[i][3] + "</li>" + "<li>Required Time:" + finalArray[i][1] + "</li>" + "<li>Required Energy:" + finalArray[i][2] + "</li>" + "<li>Home or Away?:" + finalArray[i][4] + "</li>" + "</ul></li>";
+              displayList.html(htmlForDisplay);
+            }
+          } else {
+            if (timeMatchArray === []) {
+              htmlForDisplay += "<li> No matches</li>";
+              displayList.html(htmlForDisplay);
+            }
+          }
+        }
+      }
+    });
+    // End of Advanced Activity Filters
+
   // 0: Activity Name | 1: Time | 2: Energy | 3: Urgency | 4: Home/Away | 5: ID
 
   $('#activityInputs').click(function(event) {
@@ -137,11 +202,23 @@ $(document).ready(function() {
     $("#activityInputForms").show();
     $("#activityInputs").hide();
     $("#doneAdding").show();
+    $("#findActiv").hide();
+    $("#randomActivity").hide();
+    $("#randomAct").hide();
+    // $("#moreActivityInputs").hide();
+    // $("#timeAvail").hide();
+    // $("#activityDisplay").hide();
   });
   
   $('#findActiv').click(function(event) {
     event.preventDefault();
     $("#checkForm").show();
+    $("#moreActivityInputs").show();
+    $("#activityInputs").hide();
+    $("#activityDisplay").show();
+    $("#randomAct").show();
+    // console.log("HELLO");
+    // $("#activityDisplay").show();
   });
 
   $("#doneAdding").click(function(event) {
@@ -149,6 +226,24 @@ $(document).ready(function() {
     $("#activityInputForms").hide();
     $("#doneAdding").hide();
     $("#activityInputs").show();
+    $("#findActiv").show();
+    $("#randomActivity").show();
+  });
+
+  $("#moreActivityInputs").click(function(event) {
+    event.preventDefault();
+    $("#activityInputForms").show();
+    $("#activityInputs").hide();
+    $("#doneAdding").show();
+    $("#findActiv").hide();
+    $("#randomActivity").hide();
+    $("#moreActivityInputs").hide();
+    $("#timeAvail").hide();
+    $("#timeAvail2").hide();
+    $("#timeCheck").hide();
+    $("#activityDisplay").hide();
+    $("#randomAct").hide();
+    $("#displayArray").hide();
   });
 
 });

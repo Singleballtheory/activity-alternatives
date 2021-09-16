@@ -1,14 +1,14 @@
 import {userActivity} from './activities.js';
-let hike = new userActivity("Take a hike", "120", "medium", "low", "outside");
-let bike = new userActivity("Go on a bike ride", "60", "high", "low", "outside");
-let puzzle = new userActivity("Work on a puzzle", "60", "low", "low", "at home");
-let meditate = new userActivity("Meditate for a bit", "30", "low", "low", "at home");
-let read = new userActivity("Read a chapter from a book", "30", "low", "low", "at home");
-let water = new userActivity("Water your plants", "15", "low", "medium", "at home");
-let journal = new userActivity("Write a page in your journal", "30", "low", "low", "at home");
-let oil = new userActivity("Change the oil in your car", "60", "medium", "medium", "outside");
-let bed = new userActivity("Make your bed", "15", "medium", "high", "at home");
-let grocery = new userActivity("Grocery shop for your next two meals", "120", "high", "high", "outside");
+let hike = new userActivity("Take a hike.", "120", "medium", "low", "outside");
+let bike = new userActivity("Go on a bike ride.", "60", "high", "low", "outside");
+let puzzle = new userActivity("Work on a puzzle.", "60", "low", "low", "at home");
+let meditate = new userActivity("Meditate for a bit.", "30", "low", "low", "at home");
+let read = new userActivity("Read a chapter from a book.", "30", "low", "low", "at home");
+let water = new userActivity("Water your plants.", "15", "low", "medium", "at home");
+let journal = new userActivity("Write a page in your journal.", "30", "low", "low", "at home");
+let oil = new userActivity("Change the oil in your car.", "60", "medium", "medium", "outside");
+let bed = new userActivity("Make your bed.", "15", "medium", "high", "at home");
+let grocery = new userActivity("Grocery shop for your next two meals.", "120", "high", "high", "outside");
 
 export let prebuiltArray = [hike, bike, puzzle, meditate, read, water, journal, oil, bed, grocery];
 

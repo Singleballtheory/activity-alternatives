@@ -131,3 +131,14 @@ ul#userListBase ul li {
   display:none;
 }
 
+#timeAvail {
+  width: 100px;
+}
+
+#moreActivityInputs {
+  display:none;
+}
+
+#advFilters {
+  display:none;
+}
