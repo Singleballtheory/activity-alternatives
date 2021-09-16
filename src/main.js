@@ -32,18 +32,6 @@ $(document).ready(function() {
     return user;
   });
 
-  // function displayActivity(activityToDisplay) {
-  //   let activityDisplay = $("ul#activityDisplay");
-  //   let htmlForActivity = "";
-  //   Object.keys(activityToDisplay.activities).forEach(function(key) {
-  //     const activityList = activityToDisplay.findActivity(key);
-  //     htmlForActivity += "<li id=" + user.activity + ">" + "</li>";
-  //     return activityList;
-  //   });
-  //   activityDisplay.html(htmlForActivity);
-  // }
-
-
   $('#submitActivities').click(function(event) {
     event.preventDefault();
     const activity = $('#activity').val();
@@ -61,8 +49,6 @@ $(document).ready(function() {
     activityArray.push(Object.values(user.activities[user.currentId]));
     console.log(user.findActivity(2), "this is the findActivity console log");
 
-    // $('#activityDisplay').html(`${newActivity.activity + " " + newActivity.time + " " +  newActivity.energy + " " +  newActivity.urgency + " " + newActivity.loc + " " + newActivity.id}`);
-    // return newActivity;
     let displayList = $("ul#userListBase");
     let htmlForDisplay = "";
     // Start full info display version
@@ -74,23 +60,6 @@ $(document).ready(function() {
 
   });
 
-  // $('#showActivities').click(function(event) {
-  //   event.preventDefault();
-  //   $('#activityDisplay').html(`${JSON.stringify(user.activities)}`);
-  // });
-
-  // $('#energyCheck').click(function(event) {
-  //   event.preventDefault();
-  //   for (let i = 0; i < activityArray.length; i++) { 
-  //     if (activityArray[i][2] === "low") {
-  //       console.log("low" + " " + activityArray[i][0]);
-  //     } else if (activityArray[i][2] === "medium") {
-  //       console.log("medium" + " " + activityArray[i][0]);
-  //     } else { 
-  //       console.log("high" + " " + activityArray[i][0]);
-  //     }
-  //   }
-  // });
   $('#randomActivity').click(function(event) {
     event.preventDefault();
     let randomActivity = prebuiltArray[Math.floor(Math.random()*prebuiltArray.length)];
@@ -113,8 +82,6 @@ $(document).ready(function() {
         console.log(userEnergy + " userEnergy");
         console.log(activityArray[i][2] + activityArray[i][0]+ "current index energy");
         htmlForDisplay = "";
-        // $("#activityDisplay").html(timeMatchArray);
-        // so basically, we need if userEnergy === "high" then push any that match low || med || high
         for (let i = 0; i < timeMatchArray.length; i++) {
           htmlForDisplay += "<li id=" + this.currentId + ">" + activityArray[i][0] + "<ul>" + "<li>Urgency:" + activityArray[i][3] + "</li>" + "<li>Required Time:" + activityArray[i][1] + "</li>" + "<li>Required Energy:" + activityArray[i][2] + "</li>" + "<li>Home or Away?:" + activityArray[i][4] + "</li>" + "</ul></li>";
           displayList.html(htmlForDisplay);
@@ -125,75 +92,74 @@ $(document).ready(function() {
           displayList.html(htmlForDisplay);
         }
       }
-      // displayList.html(htmlForDisplay);
     }
   });
 
-    // Start of Advanced Activity Filters
-    let finalArray = [];
-    $('input[name=low]').change(function(){
-      finalArray = [];
-      if($(this).is(':checked')) {
-        for (let i = 0; i < timeMatchArray.length; i++) {
-          if (parseInt(timeMatchArray[i][2]) === parseInt("1")) {
-            finalArray.push(activityArray[i]);
-            htmlForDisplay = "";
-            for (let i = 0; i < finalArray.length; i++) {
-              htmlForDisplay += "<li id=" + this.currentId + ">" + finalArray[i][0] + "<ul>" + "<li>Urgency:" + finalArray[i][3] + "</li>" + "<li>Required Time:" + finalArray[i][1] + "</li>" + "<li>Required Energy:" + finalArray[i][2] + "</li>" + "<li>Home or Away?:" + finalArray[i][4] + "</li>" + "</ul></li>";
-              displayList.html(htmlForDisplay);
-            }
-          } else {
-            if (timeMatchArray === []) {
-              htmlForDisplay += "<li> No matches</li>";
-              displayList.html(htmlForDisplay);
-            }
+  // Start of Advanced Activity Filters
+  let finalArray = [];
+  $('input[name=low]').change(function(){
+    finalArray = [];
+    if($(this).is(':checked')) {
+      for (let i = 0; i < timeMatchArray.length; i++) {
+        if (parseInt(timeMatchArray[i][2]) === parseInt("1")) {
+          finalArray.push(activityArray[i]);
+          htmlForDisplay = "";
+          for (let i = 0; i < finalArray.length; i++) {
+            htmlForDisplay += "<li id=" + this.currentId + ">" + finalArray[i][0] + "<ul>" + "<li>Urgency:" + finalArray[i][3] + "</li>" + "<li>Required Time:" + finalArray[i][1] + "</li>" + "<li>Required Energy:" + finalArray[i][2] + "</li>" + "<li>Home or Away?:" + finalArray[i][4] + "</li>" + "</ul></li>";
+            displayList.html(htmlForDisplay);
+          }
+        } else {
+          if (timeMatchArray === []) {
+            htmlForDisplay += "<li> No matches</li>";
+            displayList.html(htmlForDisplay);
           }
         }
       }
-    });
-  
-    $('input[name=medium]').change(function(){
-      finalArray = [];
-      if($(this).is(':checked')) {
-        for (let i = 0; i < timeMatchArray.length; i++) {
-          if (parseInt(timeMatchArray[i][2]) <= parseInt("2")) {
-            finalArray.push(activityArray[i]);
-            htmlForDisplay = "";
-            for (let i = 0; i < finalArray.length; i++) {
-              htmlForDisplay += "<li id=" + this.currentId + ">" + finalArray[i][0] + "<ul>" + "<li>Urgency:" + finalArray[i][3] + "</li>" + "<li>Required Time:" + finalArray[i][1] + "</li>" + "<li>Required Energy:" + finalArray[i][2] + "</li>" + "<li>Home or Away?:" + finalArray[i][4] + "</li>" + "</ul></li>";
-              displayList.html(htmlForDisplay);
-            }
-          } else {
-            if (timeMatchArray === []) {
-              htmlForDisplay += "<li> No matches</li>";
-              displayList.html(htmlForDisplay);
-            }
+    }
+  });
+
+  $('input[name=medium]').change(function(){
+    finalArray = [];
+    if($(this).is(':checked')) {
+      for (let i = 0; i < timeMatchArray.length; i++) {
+        if (parseInt(timeMatchArray[i][2]) <= parseInt("2")) {
+          finalArray.push(activityArray[i]);
+          htmlForDisplay = "";
+          for (let i = 0; i < finalArray.length; i++) {
+            htmlForDisplay += "<li id=" + this.currentId + ">" + finalArray[i][0] + "<ul>" + "<li>Urgency:" + finalArray[i][3] + "</li>" + "<li>Required Time:" + finalArray[i][1] + "</li>" + "<li>Required Energy:" + finalArray[i][2] + "</li>" + "<li>Home or Away?:" + finalArray[i][4] + "</li>" + "</ul></li>";
+            displayList.html(htmlForDisplay);
+          }
+        } else {
+          if (timeMatchArray === []) {
+            htmlForDisplay += "<li> No matches</li>";
+            displayList.html(htmlForDisplay);
           }
         }
       }
-    });
-  
-    $('input[name=high]').change(function(){
-      finalArray = [];
-      if($(this).is(':checked')) {
-        for (let i = 0; i < timeMatchArray.length; i++) {
-          if (parseInt(timeMatchArray[i][2]) <= parseInt("3")) {
-            finalArray.push(activityArray[i]);
-            htmlForDisplay = "";
-            for (let i = 0; i < finalArray.length; i++) {
-              htmlForDisplay += "<li id=" + this.currentId + ">" + finalArray[i][0] + "<ul>" + "<li>Urgency:" + finalArray[i][3] + "</li>" + "<li>Required Time:" + finalArray[i][1] + "</li>" + "<li>Required Energy:" + finalArray[i][2] + "</li>" + "<li>Home or Away?:" + finalArray[i][4] + "</li>" + "</ul></li>";
-              displayList.html(htmlForDisplay);
-            }
-          } else {
-            if (timeMatchArray === []) {
-              htmlForDisplay += "<li> No matches</li>";
-              displayList.html(htmlForDisplay);
-            }
+    }
+  });
+
+  $('input[name=high]').change(function(){
+    finalArray = [];
+    if($(this).is(':checked')) {
+      for (let i = 0; i < timeMatchArray.length; i++) {
+        if (parseInt(timeMatchArray[i][2]) <= parseInt("3")) {
+          finalArray.push(activityArray[i]);
+          htmlForDisplay = "";
+          for (let i = 0; i < finalArray.length; i++) {
+            htmlForDisplay += "<li id=" + this.currentId + ">" + finalArray[i][0] + "<ul>" + "<li>Urgency:" + finalArray[i][3] + "</li>" + "<li>Required Time:" + finalArray[i][1] + "</li>" + "<li>Required Energy:" + finalArray[i][2] + "</li>" + "<li>Home or Away?:" + finalArray[i][4] + "</li>" + "</ul></li>";
+            displayList.html(htmlForDisplay);
+          }
+        } else {
+          if (timeMatchArray === []) {
+            htmlForDisplay += "<li> No matches</li>";
+            displayList.html(htmlForDisplay);
           }
         }
       }
-    });
-    // End of Advanced Activity Filters
+    }
+  });
+  // End of Advanced Activity Filters
 
   // 0: Activity Name | 1: Time | 2: Energy | 3: Urgency | 4: Home/Away | 5: ID
 
@@ -205,9 +171,6 @@ $(document).ready(function() {
     $("#findActiv").hide();
     $("#randomActivity").hide();
     $("#randomAct").hide();
-    // $("#moreActivityInputs").hide();
-    // $("#timeAvail").hide();
-    // $("#activityDisplay").hide();
   });
   
   $('#findActiv').click(function(event) {
@@ -217,8 +180,6 @@ $(document).ready(function() {
     $("#activityInputs").hide();
     $("#activityDisplay").show();
     $("#randomAct").show();
-    // console.log("HELLO");
-    // $("#activityDisplay").show();
   });
 
   $("#doneAdding").click(function(event) {
@@ -247,9 +208,3 @@ $(document).ready(function() {
   });
 
 });
-
-
-// activityArray.push(Object.values(user.activities[user.currentId]));
-// activityArray.push(Object.values(user.activities[2]));
-// activityArray.push(Object.values(user.activities[3]));
-// activityArray.push(Object.values(user.activities[4]));

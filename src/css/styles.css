@@ -142,3 +142,11 @@ ul#userListBase ul li {
 #advFilters {
   display:none;
 }
+
+#energyFilter {
+  padding: 3% 0 0 0;
+}
+
+#activityPad {
+  padding: 3% 0 0 0;
+}

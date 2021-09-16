@@ -71,40 +71,41 @@
     <button id="activityInputs">Add Activities to Your List</button>
     <button id="moreActivityInputs">Add More Activities</button>
 
-    <!-- <button id="showActivities">See All Activities</button> -->
-    <!-- <button id="energyCheck">Energy Check</button> -->
 
     <button id="findActiv">Find Something to Do</button>
     <button id="randomActivity">Get a Rando</button>
     <button id="doneAdding">Done Adding</button>
     <div class="row">
-    <div id="checkForm">
-      <form id="checkTime">
-        <div class="form-group">
-        <br>
-        <label for="timeAvail2" id="timeAvail2">How much time do you have?</label>
-        <input class="form-control" type="number" id="timeAvail" name="timeAvail">
-        </div>
-        <button id="timeCheck" type="submit">Submit</button>
-      </form>
-
-      <div id="advFilters">
-        <div class="form-group" id="energyFilter">
-          <p>Filter by Energy</p>
-          <input class="energyFil" type="checkbox" id="low" name="low" value="1">
-          <label for="low">Low</label><br />
-          <input class="energyFil" type="checkbox" id="medium" name="medium" value="2">
-          <label for="medium">Medium</label><br />
-          <input class="energyFil" type="checkbox" id="high" name="high" value="3">
-          <label for="high">High</label><br />
+      <div class="col-md-4">
+        <div id="checkForm">
+          <form id="checkTime">
+            <div class="form-group">
+            <br>
+            <label for="timeAvail2" id="timeAvail2">How much time do you have?</label>
+            <input class="form-control" type="number" id="timeAvail" name="timeAvail">
+            </div>
+            <button id="timeCheck" type="submit">Submit</button>
+          </form>
+          <div id="advFilters">
+            <div class="form-group" id="energyFilter">
+              <p>Filter by Energy</p>
+              <input class="energyFil" type="checkbox" id="low" name="low" value="1">
+              <label for="low">Low</label><br />
+              <input class="energyFil" type="checkbox" id="medium" name="medium" value="2">
+              <label for="medium">Medium</label><br />
+              <input class="energyFil" type="checkbox" id="high" name="high" value="3">
+              <label for="high">High</label><br />
+            </div>
+          </div>
         </div>
       </div>
-
-    </div>
-    <div id="yourActivities">
-      <ul id="displayArray"></ul>
-    <p><span id="activityDisplay"></span></p>
-    <p><span id="randomAct"></span></p>
+      <div class="col-md-4" id="activityPad">
+        <div id="yourActivities">
+          <ul id="displayArray"></ul>
+        <p><span id="activityDisplay"></span></p>
+        <p><span id="randomAct"></span></p>
+        </div>
+      </div>
     </div>
   </div>
 
