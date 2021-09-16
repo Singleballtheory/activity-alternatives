@@ -3,7 +3,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import {User, userActivity} from './js/activities.js';
-import prebuiltArray from './js/prebuilts.js';
+import {prebuiltArray} from './js/prebuilts.js';
 import Service from './js/quotes.js';
 
 
@@ -16,7 +16,7 @@ $(document).ready(function() {
     const body = JSON.parse(response);
     let i = body[Math.floor(Math.random()*body.length)];
     $('#quote').html("' " + i.text + " '");
-    $('#author').html("-- " + i.author);
+    $('#author').html("— " + i.author);
   });
   $('#submitUser').click(function(event) {
     event.preventDefault();

@@ -1,9 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
+html { 
+  background: url(../../assets/img/rudi-endresen-A_tq4jbfzE8-unsplash.jpeg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body {
-  /* background-image: url("/assets/img/marjan-blan-marjanblan-_kUxT8WkoeY-unsplash.jpeg"); */
+  background-color:#f3f1f37a;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   
+}
+
+button {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10pt;
+  font-weight: bolder;
+  padding:4px 10px;
+  text-transform: lowercase;
+  letter-spacing: .1rem;
+}
+
+input {
+  opacity:0.5;
+  background-color:#f3f1f37a;
+}
+
+#jumbo1 {
+  background: linear-gradient(#f3f1f37e, #f3f1f300);
+  background-color:#f3f1f300;
+  /* #f3f1f37a */
+  min-height:800px;
+}
+
+#quote {
+  text-shadow: 0px 2px 3px rgb(99, 93, 100);
+  text-transform: lowercase;
+  letter-spacing: .2rem;
+}
+
+#author {
+  opacity:0.7;
+  font-size:11pt;
+  padding-left:50px;
+  line-height:3em;
+  text-transform: lowercase;
+  letter-spacing: .2rem;
+
+}
+
+#inJumbo {
+margin:auto;
+text-align: center;
+}
+
+#jumbo2 {
+  background-color:#f3f1f300;
+  margin:-3% 0 3% 0;
 }
 
 .container {
@@ -12,6 +67,17 @@ body {
 
 h1 {
   font-family: 'Orbitron', sans-serif;
+  text-align: center;
+}
+
+h4 {
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 16pt;
+  letter-spacing: .5rem;
+  text-shadow: 0px 2px 3px rgb(170, 161, 172);
 }
 
 #checkForm {
@@ -22,8 +88,17 @@ h1 {
   display:none;
 }
 
+#nameInputDiv {
+margin: -3% auto 8%;
+text-align: center;
+text-transform: lowercase;
+font-weight: bold;
+letter-spacing: .2rem;
+}
+
 #usersName {
   display:none;
+  margin:-6% 0 6% 0;
 }
 
 #doneAdding {
@@ -32,11 +107,13 @@ h1 {
 
 #userList {
   float:right;
+  position:sticky;
   width:300px;
   min-height:200px;
   box-sizing: border-box;
   padding:5px;
-  border: 1px solid black;
+  margin: 0 -10% 0 0;
+  background: linear-gradient(#bbb6b4cb, #f3f1f300);
 }
 
 ul#userListBase ul li {

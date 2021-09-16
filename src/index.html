@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title>This Robot Will Tell You How to Live Better</title>
+  <title>This Robot Will Help You Live Better</title>
 </head>
 <body>
+  <div class="jumbotron" id="jumbo1">
   <div class="container">
-    <h1 id="titleLine">This Robot Will Tell You How to Live Better</h1>
-    <div class="jumbotron">
-      <span id="quote"></span>
-      <br>
-      <br>
-      <span id="author"></span>
+    <h1 id="titleLine">This Robot Will Help You Live Better</h1>
+    <div class="jumbotron" id="jumbo2">
+      <div id="inJumbo">
+        <span id="quote"></span>
+        <br>
+        <span id="author"></span>
+      </div>
     </div>
-    <div id="usersName">
-      <h3>Hello, <span id="nameDisplay"></span></h3>
-    </div>
-    <form id="yourName">
-      <label for="nameInput">What's your name?</label>
-      <input id="nameInput" type="text">
-      <button id="submitUser">Submit</button>
-    </form>
     <div id="userList">
       <h4>Your List</h4>
       <ul id="userListBase"></ul>
     </div>
+    
+    <div id="usersName">
+      <h3>Hello, <span id="nameDisplay"></span>.</h3>
+    </div>
+
+    <div id="nameInputDiv">
+      <form id="yourName">
+        <label for="nameInput">What's your name?</label>
+        <input id="nameInput" type="text">
+        <button id="submitUser">Get Started</button>
+      </form>
+    </div>
+    
 
     <!-- start of user-added activities form -->
     <div id="activityInputForms">
@@ -102,5 +109,6 @@
     </div>
   </div>
 
+</div>
 </body>
 </html>

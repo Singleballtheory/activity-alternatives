@@ -8,9 +8,9 @@ let water = new userActivity("Water your plants", "15", "low", "medium", "at hom
 let journal = new userActivity("Write a page in your journal", "30", "low", "low", "at home");
 let oil = new userActivity("Change the oil in your car", "60", "medium", "medium", "outside");
 let bed = new userActivity("Make your bed", "15", "medium", "high", "at home");
-let grocery = new userActivity("Grocery shop for your next two meals", "120", "high", "high", "outside")
+let grocery = new userActivity("Grocery shop for your next two meals", "120", "high", "high", "outside");
 
-export let prebuiltArray = [hike, bike, puzzle, meditate, read, water, journal, oil, bed, grocery]
+export let prebuiltArray = [hike, bike, puzzle, meditate, read, water, journal, oil, bed, grocery];
 
 
 
