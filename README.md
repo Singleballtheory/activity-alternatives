@@ -1,6 +1,6 @@
 # _Activity Alternatives_
 
-#### _Bored? We can help._
+#### _Bored? Overwhelmed? We can help._
 
 #### By _**Kevin Funez, Scott Hutley, Melissa Schatz-Miller**_
 
