@@ -1,6 +1,6 @@
 # _Activity Alternatives_
 
-#### _Bored? Stupid? We can help._
+#### _Bored? We can help._
 
 #### By _**Kevin Funez, Scott Hutley, Melissa Schatz-Miller**_
 
@@ -15,31 +15,29 @@
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_This application allows users to build & manage a personal to do list, adding tasks & desired activities, & filtering by duration & energy level. Users can also click a button to receive a random suggested activity._
 
 ## Setup/Installation Requirements
 
 * _Clone [this repository](https://github.com/tigertiger/activity-alternatives) to an empty folder or to your desktop.  
 Instructions for cloning can be found [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository)._
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
+2. _Open the activity-alternatives folder in Visual Studio Code or your alternate code editor of choice._
+   _Please note that these instructions were written with VS Code MacOS in mind. If you are using a different code editor/OS, the process may vary. You can download VS Code here: [VS Code Download](https://code.visualstudio.com/download)_
+3. _In VS Code, use the Terminal dropdown to open a new Terminal_
+4. _Run the command ```npm install``` to set up the environment_
+5. _Run ```npm run build``` to build your project, then run ```npm run start``` to access your live development environment_
+6. _Edit, play, test, plan your day, etc. to your heart's content_
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _Activity filter does not always work as expected_
 
 ## License
 
 _[GPL](https://opensource.org/licenses/gpl-license)_
 _Copyright (c) 2021, Kevin Funez, Scott Hutley, Melissa Schatz-Miller_
 
-_Please feel free to reach out to me with suggested changes/improvements, or if you have any questions._
+_Please feel free to reach out to us with suggested changes/improvements, or if you have any questions._
 
 ## Contact Information
 
